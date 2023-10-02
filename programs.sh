@@ -3,26 +3,26 @@ while [ -n "$1" ]; do # while loop starts
 	case "$1" in
 	-m) echo "Installing the necessary programs"
                 exec sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-                exec ./test2
+                exec ./minimal.sh
                 clear
 		shift
 		;;
 	-n)
 		echo "Installing programs"
                 exec sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-                exec ./test1
+                exec ./base.sh
                 clear
 		shift
 		;;
 	-f) echo "Installation of all necessary programs"
                 exec sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-                exec ./test3
+                exec ./full.sh
                 clear
 		shift
 		;;
         -g) echo "Installing programs related to games"
                 exec sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-                exec ./test4
+                exec ./games.sh
                 clear
                 shift
                 ;;
